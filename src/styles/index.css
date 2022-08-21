@@ -1,8 +1,20 @@
+@import "utils.css";
+
+:root {
+  --backgroundColor:#C48F41;
+  --buttonColor: black;
+  --textColor: white;
+  --disabledColor: lightgray;
+}
+
 body {
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  /*font-family: sans-serif;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: hidden;
@@ -15,15 +27,11 @@ code {
 }
 
 .app {
-  font-family: sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 20px;
   height: 100vh;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: #f8f9fd;
 }
 
 .nav-bar {
@@ -31,4 +39,127 @@ code {
   gap: 35px;
   font-size: 18px;
   padding: 20px;
+  background-color: var(--backgroundColor);
+}
+
+.nav-bar-container {
+  position: fixed;
+  left: 2%;
+  background-color: var(--backgroundColor);
+}
+
+.nav-bar-button {
+  border-bottom: 2px dotted var(--backgroundColor);
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  background-color: var(--backgroundColor) !important;
+  border-top: 2rem;
+  color: var(--textColor);
+}
+
+.nav-disabled {
+  color: var(--disabledColor) !important;
+  border-bottom: 2px dotted var(--backgroundColor) !important;
+}
+
+.nav-active {
+  border-bottom: 2px dotted var(--textColor) !important;
+}
+
+.active {
+  border: 2px dotted var(--textColor) !important;
+}
+
+.nav-bar-button:hover {
+  border-bottom: 2px dotted var(--buttonColor);
+  color: var(--buttonColor);
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.nav-wrapper > div {
+  line-height: 50px;
+  height: 50px;
+  margin: 5px;
+  text-align: center;
+}
+
+
+.nav-wrapper > a {
+  line-height: 50px;
+  height: 50px;
+  margin: 5px;
+  text-align: center;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.col05 {
+  min-width: 5%;
+  max-width: 5%;
+}
+
+.verticalSpacing {
+  min-height: 2.5vh;
+  max-height: 2.5vh;
+}
+
+.title {
+  margin: 0 !important;
+}
+
+.subtitle {
+  margin: 0 !important;
+}
+
+.containerCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.border {
+  border-width: 1px;
+  border-color: var(--buttonColor);
+  border-style: outset;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.buttonBorder {
+  border-bottom: 2px dotted var(--backgroundColor);
+  align-items: center;
+  justify-content: center;
+  background-color: var(--backgroundColor) !important;
+  border-top: 2rem;
+  color: var(--textColor);
+}
+
+.buttonBorder:hover {
+  border-bottom: 2px dotted var(--buttonColor);
+  color: var(--buttonColor);
 }

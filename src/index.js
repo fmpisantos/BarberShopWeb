@@ -6,10 +6,11 @@ import store from '@redux/store'
 import '@styles/index.css';
 import App from './App';
 import reportWebVitals from '@tests/reportWebVitals';
+import logo from "@assets/logo.png";
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App logo={logo}/>
   </Provider>,
   document.getElementById('root')
 );

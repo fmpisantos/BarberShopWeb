@@ -3,5 +3,7 @@
     {"name":"@pages","path":"src/pages"},
     {"name":"@styles","path":"src/styles"},
     {"name":"@components","path":"src/components"},
-    {"name":"@redux","path":"src/redux"}
+    {"name":"@redux","path":"src/redux"},
+    {"name":"@langs","path":"src/langs"},
+    {"name":"@assets","path":"src/assets"}
 ]
