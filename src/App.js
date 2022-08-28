@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 
 import '@styles/App.css';
+
 import Home from "@pages/Home";
 import About from "@pages/About";
 import Selection from "@pages/Selection";
+import Agenda from "@pages/Agenda";
 
+import Header from "@components/Header";
 import NavBar from "@components/NavBar";
 
 import lang from "@langs/pt-pt"
@@ -39,9 +42,11 @@ const App = props =>{
       case 0: 
         return <Home {...props} pagination={state} name={lang.home.title} />;
       case 1:
-        return <Selection {...props} text={lang.services} array={services} set={_setServices} clear={_clearServices}  active={state.service?.id} show={(item)=>true} />
+        return <Header  {...props} text={lang.services}><Selection {...props} array={services} set={_setServices} clear={_clearServices}  active={state.service?.id} show={(item)=>true} /></Header>
       case 2:
-        return <Selection {...props} text={lang.barbers} array={barbers} set={_setBarber} clear={_clearBarbers} active={state.barber?.id} service={state.service} show={(item) => {return item.services && item.services.length > 0 && item.services.find(it => it === state.service.id)}} />
+        return <Header  {...props} text={lang.barbers}><Selection {...props} array={barbers} set={_setBarber} clear={_clearBarbers} active={state.barber?.id} service={state.service} show={(item) => {return item.services && item.services.length > 0 && item.services.find(it => it === state.service.id)}} /></Header>
+      case 3:
+          return <Header {...props} text={lang.date}><Agenda/></Header>
       default:
         return <About {...props} name="About" />
     }
